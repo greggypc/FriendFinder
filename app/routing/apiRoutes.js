@@ -23,17 +23,38 @@ module.exports = function(app) {
         // It will do this by sending out the value "true" have a table
         // req.body is available since we're using the body-parser middleware
        
-        var a = [2,3,2,6,3,2,1,4,3,2],
-        b = [2,0,5,6,3,2,4,0,2,6],
-        x = [];
+      // var friendsArray = [2,3,2,6,3,2,1,4,3,2];
+        var friendsArray = [
+            {scores: [5,4,3,2,4,5,2,1,3,4]
+            },
+            {scores: [2,0,5,6,3,2,4,0,2,6]
+            },
+            {scores: [6,5,2,3,4,1,5,6,3,2]
+            }
+          ];
+        var userData = [2,0,5,6,3,2,4,0,2,6];
+        var x = [];
 
-        for(var i = 0;i<=b.length-1;i++)
-        x.push(Math.abs(a[i] -b[i]));
+        for(var i = 0; i <= friendsArray.length-1; i++) {
+            //for(var i = 0; i <= userData.length-1; i++) {
+                x.push(Math.abs(userData[i] - friendsArray[i].scores[i]));
+                var total = x.reduce(function (prev, current) {
+                    return prev + current;
+                }, 0);
+          //  }
+           
 
-        console.log(x);
-        
-        friendsData.push(req.body);
-          res.json(true);
+        console.log(total);
+        //friendsData.push(req.body);
+        //res.json(true);
+        }
+
+        // for(var i = 0; i <= b.length-1; i++)
+        // x.push(Math.abs(a[i] -b[i]));
+        // console.log(x);
+
+        // friendsData.push(req.body);
+        //   res.json(true);
        
       });    
 };      
