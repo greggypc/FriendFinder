@@ -15,30 +15,31 @@ module.exports = function(app) {
     });
   
     app.post("/api/friends", function(req, res) {
-       //test scores
-        var friendsArray = [
-            {scores: [5,4,3,2,4,5,2,1,3,4]
-            },
-            {scores: [2,0,5,6,3,2,4,0,2,6]
-            },
-            {scores: [6,5,2,3,4,1,5,6,3,2]
-            }
-          ];
-        var userData = [2,0,5,6,3,2,4,0,2,6];
-        var x = [];
+       
+         var diff = [];
+      console.log("are you reading?");
 
-        for(var i = 0; i <= friendsArray.length-1; i++) {
-            //for(var i = 0; i <= userData.length-1; i++) {
-                x.push(Math.abs(userData[i] - friendsArray[i].scores[i]));
-                var total = x.reduce(function (prev, current) {
+      console.log(userData);
+        console.log(friendsArray.scores[0]);
+        for (var j = 0; j <= friendsArray.length-1; j++) {
+ 
+
+       var userScores = userData.scores;
+       var friendsScores = friendsArray.scores;
+
+        for(var i = 0; i <= userData.length-1; i++) {
+            
+                diff.push(Math.abs(userData.scores[i] - friendsArray.scores[i]));
+                var total = diff.reduce(function (prev, current) {
                     return prev + current;
                 }, 0);
-          //  }
-           
+                 console.log(i);
+        };
 
-        console.log(total);
-        //friendsData.push(req.body);
-        //res.json(true);
-        }
-      });    
+         };  //end main for loop.
+         res.json(data.name);
+         res.json(data.photo);
+       
+        
+      });  //end post    
 };      
