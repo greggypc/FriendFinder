@@ -187,7 +187,7 @@
 	</div>
 
   <script type="text/javascript">
-
+	//jQuery.ajaxSettings.traditional = true;
   	// Chosen CSS
     var config = {
       '.chosen-select'           : {},
@@ -235,7 +235,7 @@
 
 	    	// Grab the URL of the website
 	    	var currentURL = window.location.origin;
-
+			
 	    	// AJAX post the data to the friends API. 
 	    	$.post(currentURL + "/api/friends", userData, function(data){
 				console.log("successful post");
