@@ -22,12 +22,12 @@ module.exports = function(app) {
       var userData =  req.body;
       var userScores = userData.scores;
       
-     console.log(userScores);
+     //console.log(userScores);
      friendsArray.push(userData);
 
     for(var i = 0; i <= friendsArray.length-1; i++) {
       var diff = friendsArray[i].scores.map(function(item, index) {
-        // item is currentValue of friendsArray
+        // item is current value of friendsArray
         // using index to get value from array userScores
         // return difference of each set of scores to array diff
         return Math.abs(item - userScores[index]);
@@ -50,7 +50,7 @@ module.exports = function(app) {
     
     // find lowest score in lowestArray
     for (var j = 0; j < lowestArray; j++) {
-      if (lowestArray[i] <= lowestArray[best]) {
+      if (lowestArray[j] <= lowestArray[best]) {
         best = j;
       }
     }
